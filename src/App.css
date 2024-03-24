@@ -1,0 +1,94 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.flex, main .card .head .count, main .card .head .number {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  font-family: "Cairo", sans-serif;
+}
+
+main {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
+  background-color: #F8FAFC;
+  gap: 8px;
+  padding: 10px;
+}
+main .card {
+  height: 125px;
+  border-radius: 10px;
+  background-color: white;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.15s;
+  cursor: pointer;
+}
+main .card:hover {
+  border: 1px solid #ccc;
+  box-shadow: 0 0 2px #ccc;
+  transform: scale(0.95);
+}
+main .card .head {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+  flex-direction: row-reverse;
+}
+main .card .head .number {
+  background-color: rgba(37, 168, 124, 0.062745098);
+  color: #25A87C;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  padding: 5px;
+}
+main .card .head .count {
+  background: rgba(37, 168, 124, 0.0823529412);
+  color: #25a87c;
+  padding: 0 10px;
+  border-radius: 5px;
+}
+main .card .head .type {
+  color: #aaa;
+}
+main .card .name {
+  font-family: "Noto Naskh Arabic", sans-serif;
+}
+main .card .englishName {
+  align-self: flex-end;
+  font-size: 12px;
+  color: #999;
+}
+
+::-webkit-scrollbar {
+  width: 40px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px #ccc;
+}
+
+::-webkit-scrollbar {
+  width: 2px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #25A87C;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #1f8d68;
+}/*# sourceMappingURL=App.css.map */

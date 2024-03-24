@@ -1,0 +1,2 @@
+https://api.alquran.cloud/v1/surah
+https://api.alquran.cloud/v1/surah/114/ar.alafasy
