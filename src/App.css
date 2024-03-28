@@ -72,7 +72,7 @@ a {
   bottom: 0;
   left: 0;
   width: 100vw;
-  height: 120px;
+  height: 100px;
   background-color: #fff;
   box-shadow: 0px -8px 20px 2px #777;
 }
@@ -92,8 +92,7 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 100px;
-  padding: 0 20px;
+  padding: 12px 20px;
 }
 .player .controls .control {
   display: flex;
@@ -225,7 +224,9 @@ a {
   margin-left: -12px;
   color: #030005;
   text-transform: uppercase;
-  text-shadow: -1px -1px 0 #fff, 1px 1px 0 #25a87c;
+  text-shadow:
+    -1px -1px 0 #fff,
+    1px 1px 0 #25a87c;
   letter-spacing: -22px;
 }
 #notfound .notfound .notfound-404 h2 {
@@ -322,13 +323,9 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: sticky;
-  top: 0;
-  left: 0;
-  background: white;
-  z-index: 10;
-  padding: 20px 0;
+  padding: 20px 10px;
   box-shadow: inset 0px -1px 10px 0px #ccc;
+  margin: 20px 0 30px;
 }
 .surah header a {
   background-color: hsl(160, 80%, 95%);
@@ -338,15 +335,12 @@ a {
   justify-content: center;
   align-items: center;
   padding: 5px 15px;
+  font-size: 12px;
 }
 .surah header h1 {
   font-family: "Scheherazade New", serif;
   font-size: 21px;
-}
-@media (min-width: 640px) {
-  .surah header h1 {
-    font-size: 32px;
-  }
+  font-weight: 400;
 }
 .surah header div {
   color: #ccc;
@@ -356,8 +350,14 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  background: white;
 }
 .surah .headSurah a {
+  font-size: 12px;
   background-color: hsl(160, 80%, 95%);
   color: #25a87c;
   border-radius: 5px;
@@ -373,8 +373,8 @@ a {
   overflow: hidden;
   pointer-events: none;
   -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  -moz-user-select: none;
+  user-select: none;
 }
 .surah .headSurah .bisme img {
   width: 100%;
@@ -386,7 +386,7 @@ a {
 }
 @media (min-width: 640px) {
   .surah main.surah {
-    width: 440px;
+    width: 550px;
   }
 }
 .surah main.surah .ayah {
@@ -424,4 +424,10 @@ a {
   display: inline-flex;
   font-family: "Cairo", sans-serif;
   margin: 0 10px 0 0;
-}/*# sourceMappingURL=App.css.map */
+}
+
+@media (min-width: 640px) {
+  a {
+    font-size: 18px;
+  }
+} /*# sourceMappingURL=App.css.map */

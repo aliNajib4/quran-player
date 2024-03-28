@@ -84,8 +84,8 @@ const Surah = () => {
             number !== null
               ? number < data.numberOfAyahs
                 ? data.ayahs[number].audio
-                : undefined
-              : undefined
+                : ""
+              : ""
           }
           setNumber={setNumber}
           numberOfAyahs={data.numberOfAyahs}

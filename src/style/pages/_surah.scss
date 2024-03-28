@@ -4,22 +4,17 @@
 .surah {
   header {
     @include flex(false);
-        position: sticky;
-    top: 0;
-    left: 0;
-    background: white;
-    z-index: 10;
-    padding: 20px 0;
+    padding: 20px 10px;
     box-shadow: inset 0px -1px 10px 0px #ccc;
+    margin: 20px 0 30px;
     a {
       @include smCard(5px, 5px 15px);
+      font-size: 12px;
     }
     h1 {
       font-family: $secondary-font;
       font-size: 21px;
-      @media (min-width: $bp-sm) {
-        font-size: 32px;
-      }
+      font-weight: 400;
     }
     div {
       color: $gray;
@@ -28,11 +23,15 @@
   }
   .headSurah {
     @include flex(false);
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    background: white;
     a {
+      font-size: 12px;
       @include smCard(5px, 5px 10px);
       display: inline-block;
-    }
-    a:nth-child(1) {
     }
     .bisme {
       width: 200px;
@@ -45,14 +44,12 @@
         margin-top: -75px;
       }
     }
-    a:nth-child(2) {
-    }
   }
   main.surah {
     width: 100%;
     margin: 20px auto 130px;
     @media (min-width: $bp-sm) {
-      width: 440px;
+      width: 550px;
     }
     .ayah {
       border-radius: 5px;
@@ -87,5 +84,11 @@
       font-family: $main-font;
       margin: 0 10px 0 0;
     }
+  }
+}
+
+@media (min-width: $bp-sm) {
+  a {
+    font-size: 18px;
   }
 }
