@@ -1,0 +1,89 @@
+@use "../abstracts/variables" as *;
+
+#notfound {
+  position: relative;
+  height: 100vh;
+  background: $black;
+  .notfound {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    max-width: 767px;
+    width: 100%;
+    line-height: 1.4;
+    text-align: center;
+    .notfound-404 {
+      position: relative;
+      height: 180px;
+      margin-bottom: 20px;
+      z-index: -1;
+      h1 {
+        font-family: $main-font, sans-serif;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        font-size: 224px;
+        font-weight: 900;
+        margin-top: 0;
+        margin-bottom: 0;
+        margin-left: -12px;
+        color: $black;
+        text-transform: uppercase;
+        text-shadow:
+          -1px -1px 0 $white,
+          1px 1px 0 $main;
+        letter-spacing: -22px;
+      }
+      h2 {
+        font-family: $main-font, sans-serif;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 110px;
+        font-size: 42px;
+        font-weight: 700;
+        color: $white;
+        text-transform: uppercase;
+        text-shadow: 0 2px 0 $main;
+        word-spacing: 32px;
+        margin: 0;
+      }
+    }
+    a {
+      font-family: $main-font, sans-serif;
+      display: inline-block;
+      text-transform: uppercase;
+      color: $white;
+      text-decoration: none;
+      border: 2px solid;
+      background: 0 0;
+      padding: 10px 30px;
+      font-size: 14px;
+      font-weight: 700;
+      -webkit-transition: 0.2s all;
+      transition: 0.2s all;
+      margin-top: 32px;
+      &:hover {
+        color: $main;
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .notfound .notfound-404 h2 {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .notfound .notfound-404 h1 {
+    font-size: 182px;
+  }
+}

@@ -48,4 +48,4 @@ useFetchData.propTypes = {
   url: PropTypes.string.isRequired,
 };
 
-export {useFetchData};
+export { useFetchData };

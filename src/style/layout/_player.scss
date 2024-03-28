@@ -1,0 +1,73 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.player {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 120px;
+  background-color: $white;
+  box-shadow: 0px -8px 20px 2px #777;
+
+
+  .progress {
+    width: 98%;
+    height: 3px;
+    margin: 30px 1% 0;
+    background-color: $gray;
+    .bar {
+      display: block;
+      width: 0%;
+      height: 100%;
+      background-color: $main;
+    }
+  }
+  .controls {
+    @include flex(false);
+    height: 100px;
+    padding: 0 20px;
+    .control {
+      @include flex(true);
+      gap: 20px;
+
+      .prev,
+      .play,
+      .next {
+        svg {
+          fill: $gray2;
+          width: 25px;
+          height: 25px;
+          transition: 0.3s;
+          &:hover {
+            fill: $main;
+          }
+        }
+      }
+
+      .play {
+        svg {
+          width: 35px;
+          height: 35px;
+        }
+      }
+
+      .timeNow {
+        font-size: 40px;
+      }
+      .timeAll {
+      }
+
+      &.disabled {
+        .prev,
+        .play,
+        .next {
+          svg {
+            fill: $gray;
+            cursor: not-allowed;
+          }
+        }
+      }
+    }
+  }
+}

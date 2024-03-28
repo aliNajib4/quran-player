@@ -1,0 +1,12 @@
+@use "./abstracts/variables" as *;
+@use "./abstracts/mixins" as *;
+@use "./abstracts/container" as *;
+
+@use "./base/globalrulses";
+
+@use "./layout/player";
+
+@use "./pages/main";
+@use "./pages/notFound";
+@use "./pages/loading";
+@use "./pages/surah";

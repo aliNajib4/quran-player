@@ -1,0 +1,91 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.surah {
+  header {
+    @include flex(false);
+        position: sticky;
+    top: 0;
+    left: 0;
+    background: white;
+    z-index: 10;
+    padding: 20px 0;
+    box-shadow: inset 0px -1px 10px 0px #ccc;
+    a {
+      @include smCard(5px, 5px 15px);
+    }
+    h1 {
+      font-family: $secondary-font;
+      font-size: 21px;
+      @media (min-width: $bp-sm) {
+        font-size: 32px;
+      }
+    }
+    div {
+      color: $gray;
+      font-size: 12px;
+    }
+  }
+  .headSurah {
+    @include flex(false);
+    a {
+      @include smCard(5px, 5px 10px);
+      display: inline-block;
+    }
+    a:nth-child(1) {
+    }
+    .bisme {
+      width: 200px;
+      height: 50px;
+      overflow: hidden;
+      pointer-events: none;
+      user-select: none;
+      img {
+        width: 100%;
+        margin-top: -75px;
+      }
+    }
+    a:nth-child(2) {
+    }
+  }
+  main.surah {
+    width: 100%;
+    margin: 20px auto 130px;
+    @media (min-width: $bp-sm) {
+      width: 440px;
+    }
+    .ayah {
+      border-radius: 5px;
+      font-family: $ayah-font;
+      text-align: center;
+      line-height: 2.25;
+      margin-left: 10px;
+      font-size: 18px;
+
+      @media (min-width: $bp-sm) {
+        font-size: 22px;
+      }
+      &.active {
+        background-color: #f3f3f3;
+      }
+      &:hover {
+        background-color: $bg-main;
+      }
+    }
+    .numberInSurah {
+      color: $gray;
+      font-size: 12px;
+      display: inline-block;
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      position: relative;
+      background-color: $bg-main;
+      color: $main;
+      @include flex(true);
+      display: inline-flex;
+      font-family: $main-font;
+      margin: 0 10px 0 0;
+    }
+  }
+}

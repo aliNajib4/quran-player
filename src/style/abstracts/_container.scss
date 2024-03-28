@@ -1,0 +1,34 @@
+@use "../abstracts/variables" as *;
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: $container-p-md;
+  padding-right: $container-p-md;
+  max-width: 1200px;
+  width: 100%;
+
+  // Small screens (sm)
+  @media (min-width: #{$bp-sm}) {
+    padding-left: $container-p-sm;
+    padding-right: $container-p-sm;
+  }
+
+  // Medium screens (md)
+  @media (min-width: #{$bp-md}) {
+    padding-left: $container-p-md;
+    padding-right: $container-p-md;
+  }
+
+  // Large screens (lg)
+  @media (min-width: #{$bp-lg}) {
+    padding-left: $container-p-l;
+    padding-right: $container-p-l;
+  }
+
+  // Extra-large screens (xl)
+  @media (min-width: #{$bp-xl}) {
+    padding-left: $container-p-xl;
+    padding-right: $container-p-xl;
+  }
+}

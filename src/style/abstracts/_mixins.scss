@@ -1,0 +1,15 @@
+@use "../abstracts/variables" as *;
+
+@mixin flex($justify) {
+  display: flex;
+  justify-content: if($justify, center, space-between);
+  align-items: center;
+}
+
+@mixin smCard($radius, $padding) {
+  background-color: $bg-main;
+  color: $main;
+  border-radius: if($radius, $radius, 0);
+  @include flex(true);
+  padding: if($padding, $padding, 0);
+}

@@ -1,74 +1,44 @@
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 40px;
+  padding-right: 40px;
+  max-width: 1200px;
+  width: 100%;
+}
+@media (min-width: 640px) {
+  .container {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+@media (min-width: 1024px) {
+  .container {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+}
+@media (min-width: 1280px) {
+  .container {
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-.flex, main .card .head .count, main .card .head .number {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 body {
   font-family: "Cairo", sans-serif;
-}
-
-main {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
-  background-color: #F8FAFC;
-  gap: 8px;
-  padding: 10px;
-}
-main .card {
-  height: 125px;
-  border-radius: 10px;
-  background-color: white;
-  padding: 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  transition: 0.15s;
-  cursor: pointer;
-}
-main .card:hover {
-  border: 1px solid #ccc;
-  box-shadow: 0 0 2px #ccc;
-  transform: scale(0.95);
-}
-main .card .head {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 5px;
-  flex-direction: row-reverse;
-}
-main .card .head .number {
-  background-color: rgba(37, 168, 124, 0.062745098);
-  color: #25A87C;
-  width: 25px;
-  height: 25px;
-  border-radius: 50%;
-  padding: 5px;
-}
-main .card .head .count {
-  background: rgba(37, 168, 124, 0.0823529412);
-  color: #25a87c;
-  padding: 0 10px;
-  border-radius: 5px;
-}
-main .card .head .type {
-  color: #aaa;
-}
-main .card .name {
-  font-family: "Noto Naskh Arabic", sans-serif;
-}
-main .card .englishName {
-  align-self: flex-end;
-  font-size: 12px;
-  color: #999;
 }
 
 ::-webkit-scrollbar {
@@ -84,11 +54,374 @@ main .card .englishName {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #25A87C;
+  background: #25a87c;
   border-radius: 10px;
 }
 
-/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #1f8d68;
+  background: hsl(160, 80%, 95%);
+}
+
+a {
+  text-decoration: none;
+  color: #25a87c;
+}
+
+.player {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 120px;
+  background-color: #fff;
+  box-shadow: 0px -8px 20px 2px #777;
+}
+.player .progress {
+  width: 98%;
+  height: 3px;
+  margin: 30px 1% 0;
+  background-color: #ccc;
+}
+.player .progress .bar {
+  display: block;
+  width: 0%;
+  height: 100%;
+  background-color: #25a87c;
+}
+.player .controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  padding: 0 20px;
+}
+.player .controls .control {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.player .controls .control .prev svg,
+.player .controls .control .play svg,
+.player .controls .control .next svg {
+  fill: #aaa;
+  width: 25px;
+  height: 25px;
+  transition: 0.3s;
+}
+.player .controls .control .prev svg:hover,
+.player .controls .control .play svg:hover,
+.player .controls .control .next svg:hover {
+  fill: #25a87c;
+}
+.player .controls .control .play svg {
+  width: 35px;
+  height: 35px;
+}
+.player .controls .control .timeNow {
+  font-size: 40px;
+}
+.player .controls .control.disabled .prev svg,
+.player .controls .control.disabled .play svg,
+.player .controls .control.disabled .next svg {
+  fill: #ccc;
+  cursor: not-allowed;
+}
+
+.mainpage {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
+  background-color: #f8fafc;
+  gap: 8px;
+  padding: 10px;
+}
+.mainpage .card {
+  height: 125px;
+  border-radius: 10px;
+  background-color: #fff;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.15s;
+  cursor: pointer;
+}
+.mainpage .card:hover {
+  border: 1px solid #ccc;
+  box-shadow: 0 0 2px #ccc;
+  transform: scale(1.02);
+}
+.mainpage .card .head {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+  flex-direction: row-reverse;
+}
+.mainpage .card .head .number {
+  width: 25px;
+  height: 25px;
+  background-color: hsl(160, 80%, 95%);
+  color: #25a87c;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+}
+.mainpage .card .head .count {
+  background-color: hsl(160, 80%, 95%);
+  color: #25a87c;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 10px;
+}
+.mainpage .card .head .type {
+  color: #ccc;
+}
+.mainpage .card .name {
+  font-family: "Scheherazade New", serif;
+}
+.mainpage .card .englishName {
+  align-self: flex-end;
+  font-size: 12px;
+  color: #ccc;
+}
+
+#notfound {
+  position: relative;
+  height: 100vh;
+  background: #030005;
+}
+#notfound .notfound {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 767px;
+  width: 100%;
+  line-height: 1.4;
+  text-align: center;
+}
+#notfound .notfound .notfound-404 {
+  position: relative;
+  height: 180px;
+  margin-bottom: 20px;
+  z-index: -1;
+}
+#notfound .notfound .notfound-404 h1 {
+  font-family: "Cairo", sans-serif, sans-serif;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 224px;
+  font-weight: 900;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: -12px;
+  color: #030005;
+  text-transform: uppercase;
+  text-shadow: -1px -1px 0 #fff, 1px 1px 0 #25a87c;
+  letter-spacing: -22px;
+}
+#notfound .notfound .notfound-404 h2 {
+  font-family: "Cairo", sans-serif, sans-serif;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 110px;
+  font-size: 42px;
+  font-weight: 700;
+  color: #fff;
+  text-transform: uppercase;
+  text-shadow: 0 2px 0 #25a87c;
+  word-spacing: 32px;
+  margin: 0;
+}
+#notfound .notfound a {
+  font-family: "Cairo", sans-serif, sans-serif;
+  display: inline-block;
+  text-transform: uppercase;
+  color: #fff;
+  text-decoration: none;
+  border: 2px solid;
+  background: 0 0;
+  padding: 10px 30px;
+  font-size: 14px;
+  font-weight: 700;
+  transition: 0.2s all;
+  margin-top: 32px;
+}
+#notfound .notfound a:hover {
+  color: #25a87c;
+}
+
+@media (max-width: 767px) {
+  .notfound .notfound-404 h2 {
+    font-size: 24px;
+  }
+}
+@media (max-width: 480px) {
+  .notfound .notfound-404 h1 {
+    font-size: 182px;
+  }
+}
+.containerLoading {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.loading div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border: 8px solid #ccc;
+  border-radius: 50%;
+  animation: loading 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #ccc transparent transparent transparent;
+}
+
+.loading div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+
+.loading div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+
+.loading div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+
+@keyframes loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.surah header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  left: 0;
+  background: white;
+  z-index: 10;
+  padding: 20px 0;
+  box-shadow: inset 0px -1px 10px 0px #ccc;
+}
+.surah header a {
+  background-color: hsl(160, 80%, 95%);
+  color: #25a87c;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 15px;
+}
+.surah header h1 {
+  font-family: "Scheherazade New", serif;
+  font-size: 21px;
+}
+@media (min-width: 640px) {
+  .surah header h1 {
+    font-size: 32px;
+  }
+}
+.surah header div {
+  color: #ccc;
+  font-size: 12px;
+}
+.surah .headSurah {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.surah .headSurah a {
+  background-color: hsl(160, 80%, 95%);
+  color: #25a87c;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 10px;
+  display: inline-block;
+}
+.surah .headSurah .bisme {
+  width: 200px;
+  height: 50px;
+  overflow: hidden;
+  pointer-events: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.surah .headSurah .bisme img {
+  width: 100%;
+  margin-top: -75px;
+}
+.surah main.surah {
+  width: 100%;
+  margin: 20px auto 130px;
+}
+@media (min-width: 640px) {
+  .surah main.surah {
+    width: 440px;
+  }
+}
+.surah main.surah .ayah {
+  border-radius: 5px;
+  font-family: "Amiri", serif;
+  text-align: center;
+  line-height: 2.25;
+  margin-left: 10px;
+  font-size: 18px;
+}
+@media (min-width: 640px) {
+  .surah main.surah .ayah {
+    font-size: 22px;
+  }
+}
+.surah main.surah .ayah.active {
+  background-color: #f3f3f3;
+}
+.surah main.surah .ayah:hover {
+  background-color: hsl(160, 80%, 95%);
+}
+.surah main.surah .numberInSurah {
+  color: #ccc;
+  font-size: 12px;
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  position: relative;
+  background-color: hsl(160, 80%, 95%);
+  color: #25a87c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: inline-flex;
+  font-family: "Cairo", sans-serif;
+  margin: 0 10px 0 0;
 }/*# sourceMappingURL=App.css.map */
